@@ -9,8 +9,24 @@ import {
 } from "@ant-design/icons";
 import { useRole } from "./RoleContext";
 import { projectsData } from "../data/roleData";
-import { useRef } from "react";
+import { useRef, useSyncExternalStore } from "react";
 import type { CarouselRef } from "antd/es/carousel";
+
+const getSlidesToShow = (width: number) => {
+  if (width <= 640) return 1;
+  if (width <= 1024) return 2;
+  return 3;
+};
+
+const subscribe = (callback: () => void) => {
+  window.addEventListener("resize", callback);
+  return () => window.removeEventListener("resize", callback);
+};
+
+const getSnapshot = () => getSlidesToShow(window.innerWidth);
+const getServerSnapshot = () => 1; // SSR: default to mobile-first
+
+const useSlidesToShow = () => useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
 const badgeConfig = {
   featured: {
@@ -39,6 +55,7 @@ export function ProjectsSection() {
   const { role } = useRole();
   const projects = projectsData[role];
   const carouselRef = useRef<CarouselRef>(null);
+  const slidesToShow = useSlidesToShow();
 
   const ProjectCard = ({ project, index }: { project: (typeof projects)[0]; index: number }) => {
     const badges = project.badge || [];
@@ -131,24 +148,10 @@ export function ProjectsSection() {
               ref={carouselRef}
               dots={{ className: "mb-6" }}
               dotPlacement="top"
-              slidesToShow={3}
+              slidesToShow={slidesToShow}
               slidesToScroll={1}
               autoplay
               autoplaySpeed={5000}
-              responsive={[
-                {
-                  breakpoint: 1024,
-                  settings: {
-                    slidesToShow: 2,
-                  },
-                },
-                {
-                  breakpoint: 640,
-                  settings: {
-                    slidesToShow: 1,
-                  },
-                },
-              ]}
             >
               {projects.map((project, index) => (
                 <ProjectCard project={project} index={index} />
