@@ -16,7 +16,6 @@ npm-debug.log*
 pnpm-debug.log*
 
 # IDE & OS
-.vscode/
 .idea/
 .DS_Store
 

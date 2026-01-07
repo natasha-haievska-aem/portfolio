@@ -57,7 +57,7 @@ export function Header() {
       </div>
 
       {/* Mobile Navigation - Slide from Left */}
-      <nav 
+      <nav
         className={`
           md:hidden fixed top-16 left-0 h-[calc(100vh-4rem)] w-72 bg-background z-50
           border ${mobileMenuOpen ? 'shadow-[16px_4px_20px_2px_rgba(0,10,0,0.3)]' : 'shadow-none'}
@@ -81,7 +81,7 @@ export function Header() {
 
       {/* Overlay when menu is open */}
       {mobileMenuOpen && (
-        <div 
+        <div
           className="md:hidden fixed inset-0 top-16 bg-black/50 z-40"
           onClick={() => setMobileMenuOpen(false)}
         />

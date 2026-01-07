@@ -185,15 +185,35 @@
   margin-bottom: 0 !important;
 }
 
-/* Carousel dot styles - theme aware */
+/* Carousel dot styles - light mode (default) */
 .ant-carousel .slick-dots li button {
-  background: var(--muted-foreground) !important;
+  background: #717182 !important;
   opacity: 0.5;
 }
 
 .ant-carousel .slick-dots li.slick-active button {
-  background: var(--primary) !important;
+  background: #030213 !important;
   opacity: 1;
+}
+
+/* Override Ant Design's ::after pseudo-element that covers the dot */
+.ant-carousel .slick-dots li.slick-active::after {
+  background: #030213 !important;
+}
+
+/* Dark mode carousel dots - higher specificity */
+html.dark .ant-carousel .slick-dots li button {
+  background: #717182 !important;
+  opacity: 0.5;
+}
+
+html.dark .ant-carousel .slick-dots li.slick-active button {
+  background: #ffffff !important;
+  opacity: 1;
+}
+
+html.dark .ant-carousel .slick-dots li.slick-active::after {
+  background: #ffffff !important;
 }
 
 /* Carousel equal height cards */

@@ -1,4 +1,13 @@
-import type { RoleKey } from '../components/RoleContext';
+import type { RoleKey } from "../components/RoleContext";
+
+import appButtonsImage from "@/assets/images/fsDev/appButtons.png";
+import esudImage from "@/assets/images/fsDev/eSUD.png";
+import pspMetricsImage from "@/assets/images/fsDev/psp_metrics_logo.jpeg";
+import fmsImage from "@/assets/images/fsDev/FMS.png";
+import portfolioImage from "@/assets/images/fsDev/Portfolio.png";
+import mortalCombatImage from "@/assets/images/fsDev/MK.png";
+import epImage from "@/assets/images/emEng/EP01.png";
+import patentImage from "@/assets/images/emEng/Patent.png";
 
 // ============================================
 // PROFILE DATA
@@ -14,34 +23,49 @@ export interface ProfileData {
   };
 }
 
-const emEngExperience = `${new Date('2022.02.24').getFullYear() - new Date('2013.06.01').getFullYear()}+`;
+const emEngExperience = `${new Date("2021.09.01").getFullYear() - new Date("2012.06.01").getFullYear()}+`;
 const fsDevExperience = `${new Date().getFullYear() - 2021}+`;
+
+export const commonDescriptions = [
+  "I have a Master’s degree in Electromechanics, and a significant part of my life has been dedicated to engineering: designing, putting new mechanisms for oil extraction into production, and scaling their serial manufacturing. Engineering shaped how I think: systematically, responsibly, and with respect for real-world constraints.",
+  "During COVID, I began learning programming to build a profession that didn’t depend on being physically present in an office. After the war started in Ukraine in 2022, web development became a way for me to live and stay independent. Still, my heart belongs to engineering, especially at the intersection of electromechanical design and programming.",
+  "Music is a long-term passion of mine, practiced at a professional level. I play piano, guitar, and drums, write original music, and have worked as a sound producer for a Ukrainian singer. I also participated as a performing musician and later led a worship band in a local church in Ukraine. Music gives me creative balance, discipline, and a deeper sense of harmony beyond technical work.",
+  "I believe that if something doesn’t violate the laws of reality, it can be built.",
+];
 
 export const profileData: Record<RoleKey, ProfileData> = {
   fullStackDev: {
-    tagline: 'Full-Stack Developer',
-    title: 'Crafting Beautiful Digital Experiences',
+    tagline: "Full-Stack Developer",
+    title: "Crafting Beautiful Digital Experiences",
     description: [
-      "I'm a passionate full-stack developer specializing in building exceptional digital experiences. I focus on creating responsive, performant, and accessible web applications using modern technologies like React, TypeScript, and Node.js.",
-      'My expertise lies in transforming designs into pixel-perfect, interactive interfaces while maintaining clean, maintainable code and following best practices.',
+      commonDescriptions[0],
+      commonDescriptions[1],
+      "Right now I'm a full-stack developer specializing in building exceptional digital experiences. I focus on creating responsive, performant, and accessible web applications using modern technologies like React, TypeScript, and Node.js.",
+      "My expertise lies in transforming designs into pixel-perfect, scalable, interactive and mobile-first interfaces while maintaining clean, maintainable code and following best practices.",
+      commonDescriptions[2],
+      commonDescriptions[3],
     ],
     stats: {
       experience: fsDevExperience,
-      projects: '50+',
-      satisfaction: '100%',
+      projects: "7+",
+      satisfaction: "100%",
     },
   },
   emEng: {
-    tagline: 'Electromechanical Engineer',
-    title: 'Building Intelligent Systems',
+    tagline: "Electromechanical Engineer",
+    title: "Building Intelligent Systems",
     description: [
-      "I'm an electromechanical engineer with expertise in automation, control systems, and mechatronics. I design and implement integrated solutions combining electrical, mechanical, and software components.",
-      'My background includes PLC programming, CAD design, power systems, and industrial automation with a focus on efficiency and reliability.',
+      commonDescriptions[0],
+      "I started my career as a Junior Design Engineer, focusing on component-level design, calculations, and drafting for downhole oil extraction equipment. Over time, I built deep expertise in hydraulic, thermal, and strength analysis, gradually expanding my responsibility from individual parts to full tool assemblies operating under extreme downhole conditions.",
+      "As I progressed into a Lead Design Engineer role, I took ownership of the complete development lifecycle—from concept and feasibility to prototyping, testing, and series production. I led the design of solutions for complex well geometries, including curved and nearly horizontal wells, working closely with manufacturing and field teams to ensure reliability and performance.",
+      "One of the key outcomes of my work was the development of a unique downhole solution that advanced from concept to industrial deployment and resulted in multiple granted patents",
+      commonDescriptions[2],
+      commonDescriptions[3],
     ],
     stats: {
       experience: emEngExperience,
-      projects: '30+',
-      satisfaction: '100%',
+      projects: "10+",
+      satisfaction: "100%",
     },
   },
 };
@@ -62,49 +86,53 @@ export interface SkillCategory {
 export const skillsData: Record<RoleKey, SkillCategory[]> = {
   fullStackDev: [
     {
-      title: 'Front-End',
+      title: "Front-End",
       skills: [
-        { name: 'React', level: 95 },
-        { name: 'TypeScript', level: 90 },
-        { name: 'JavaScript (ES6+)', level: 95 },
-        { name: 'HTML5 & CSS3', level: 98 },
-        { name: 'Tailwind CSS', level: 92 },
-        { name: 'Next.js', level: 88 },
+        { name: "TypeScript", level: 90 },
+        { name: "JavaScript (ES6+)", level: 95 },
+        { name: "HTML5 & CSS3", level: 98 },
+        { name: "Tailwind CSS", level: 92 },
+        { name: "React", level: 95 },
+        { name: "Vue.js", level: 75 },
+        { name: "Next.js", level: 70 },
+        { name: "Redux", level: 85 },
       ],
     },
     {
-      title: 'Back-End & Tools',
+      title: "Back-End & Tools",
       skills: [
-        { name: 'Node.js', level: 88 },
-        { name: 'PostgreSQL / MongoDB', level: 85 },
-        { name: 'REST APIs & GraphQL', level: 88 },
-        { name: 'Git & GitHub', level: 90 },
-        { name: 'Docker', level: 80 },
-        { name: 'AWS / GCP', level: 78 },
+        { name: "Node.js", level: 88 },
+        { name: "PostgreSQL / MySQL", level: 85 },
+        { name: "MongoDB / Redis", level: 85 },
+        { name: "REST APIs", level: 88 },
+        { name: "Git & GitHub", level: 90 },
+        { name: "AWS / GCP", level: 78 },
+        { name: "Firebase", level: 80 },
+        { name: "APIs integration", level: 85 },
       ],
     },
   ],
   emEng: [
     {
-      title: 'Engineering Software',
+      title: "Engineering Software",
       skills: [
-        { name: 'SolidWorks (PDM)', level: 90 },
-        { name: 'ANSYS', level: 85 },
-        { name: 'MATLAB / Simulink', level: 80 },
-        { name: 'EPLAN Electric', level: 82 },
-        { name: 'LabVIEW', level: 78 },
-        { name: 'Altium Designer', level: 75 },
+        { name: "SolidWorks (PDM)", level: 90 },
+        { name: "ANSYS Maxwell", level: 90 },
+        { name: "ANSYS Mechanical", level: 85 },
+        { name: "ANSYS Fluent/CFD", level: 85 },
+        { name: "ANSYS Workbench", level: 80 },
+        { name: "MATLAB / Simulink", level: 75 },
       ],
     },
     {
-      title: 'Technical Skills',
+      title: "Technical Skills",
       skills: [
-        { name: 'Control Systems', level: 90 },
-        { name: 'Industrial Automation', level: 88 },
-        { name: 'Power Electronics', level: 85 },
-        { name: 'Mechatronics', level: 87 },
-        { name: 'Embedded Systems', level: 80 },
-        { name: 'Technical Documentation', level: 92 },
+        { name: "Technical Documentation", level: 95 },
+        { name: "Technical Drawing Review", level: 95 },
+        { name: "Techßnical Expertise", level: 90 },
+        { name: "Project Management", level: 85 },
+        { name: "Mechatronics", level: 75 },
+        { name: "Power Electronics", level: 60 },
       ],
     },
   ],
@@ -113,85 +141,158 @@ export const skillsData: Record<RoleKey, SkillCategory[]> = {
 // ============================================
 // PROJECTS DATA
 // ============================================
+
+type ProjectBadge = "featured" | "fun" | "personal" | "under NDA";
+
 export interface Project {
   title: string;
   description: string;
+  image: string;
   tags: string[];
   github?: string;
   demo?: string;
-  image: string;
-  featured: boolean;
+  badge?: ProjectBadge[];
 }
 
 export const projectsData: Record<RoleKey, Project[]> = {
   fullStackDev: [
     {
-      title: 'E-Commerce Platform',
+      title: "AppButtons - The App Helper",
       description:
-        'A fully responsive e-commerce platform with shopping cart, payment integration, and admin dashboard. Features real-time inventory updates and seamless checkout experience.',
-      tags: ['React', 'TypeScript', 'Stripe', 'Tailwind CSS'],
-      github: '#',
-      demo: '#',
-      image:
-        'https://images.unsplash.com/photo-1750056393300-102f7c4b8bc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjBtb2NrdXB8ZW58MXx8fHwxNzY3MzM2ODQwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      featured: true,
+        "Add custom buttons and actions to business-critical CRMs and apps. Just add the button wherever you need it.",
+      tags: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Chrome Extension",
+        "NestJS",
+        "MySQL",
+        "REST APIs",
+        "Firebase",
+        "Stripe",
+        "OpenAI",
+        "GCP",
+      ],
+      demo: "https://chromewebstore.google.com/detail/appbuttons-the-app-helper/jgjipknilejkkehninepjgfcijpomnaj",
+      image: appButtonsImage,
+      badge: ["featured"],
     },
     {
-      title: 'Dashboard Analytics',
-      description:
-        'Modern analytics dashboard with interactive charts, real-time data visualization, and customizable widgets. Built with performance and scalability in mind.',
-      tags: ['Next.js', 'Recharts', 'PostgreSQL', 'React Query'],
-      github: '#',
-      demo: '#',
-      image:
-        'https://images.unsplash.com/photo-1604781109199-ced99b89b0f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY3MzY4NjY5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      featured: true,
+      title: "Vivo+ - veterinary clinic web-site",
+      description: "Single page web-site for veterinary clinic.",
+      tags: ["No-code / low-code"],
+      demo: "https://vivoplus-vet.com/",
+      image: "https://pagemaker.b-cdn.net/media/103305/820x811.png",
     },
     {
-      title: 'Social Media App',
-      description:
-        'Mobile-first progressive web app with real-time messaging, user profiles, and social features. Optimized for performance and offline functionality.',
-      tags: ['React', 'PWA', 'WebSockets', 'Firebase'],
-      github: '#',
-      demo: '#',
-      image:
-        'https://images.unsplash.com/photo-1605108222700-0d605d9ebafe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzY3MzQzODc0fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      featured: false,
+      title: "E-SUD - online lawyer platform",
+      description: "",
+      tags: ["Vue.js"], //TODO: update
+      demo: "https://e-sud.com.ua/",
+      image: esudImage,
+      badge: ["featured"],
+    },
+    {
+      title: "Mortal Combat online game",
+      description: "Fun project to practice JavaScript, HTML5, CSS3.",
+      tags: ["JavaScript", "HTML5", "CSS3"],
+      image: mortalCombatImage,
+      badge: ["fun", "personal"],
+      demo: "https://natasha-haievska-aem.github.io/MortalKombat/",
+      github: "https://github.com/natasha-haievska-aem/MortalKombat",
+    },
+    {
+      title: "PSP-Metrics",
+      description: "Legacy system modernization using modern web technologies.",
+      tags: ["React", "TypeScript", "NestJS", "REST APIs", "PostgreSQL"],
+      image: pspMetricsImage,
+      badge: ["featured", "under NDA"],
+    },
+    {
+      title: "Forecast Management System",
+      description: "Legacy system modernization using modern web technologies.",
+      tags: ["React", "TypeScript", "Redux", "REST APIs", "MongoDB", "AWS"],
+      image: fmsImage,
+      badge: ["featured", "under NDA"],
+    },
+    {
+      title: "Portfolio Web-site",
+      description: "",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Ant Design"],
+      image: portfolioImage,
+      badge: ["personal"],
+      github: "https://github.com/natasha-haievska-aem/Portfolio",
+      demo: "https://natasha-haievska-aem.github.io/portfolio/",
     },
   ],
   emEng: [
     {
-      title: 'Automated Assembly Line',
+      title: "EP01",
       description:
-        'Designed and programmed a fully automated assembly line with PLC control, robotic arms, and conveyor systems. Achieved 40% increase in production efficiency.',
-      tags: ['PLC', 'Siemens S7', 'SCADA', 'Robotics'],
-      github: undefined,
-      demo: '#',
-      image:
-        'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080',
-      featured: true,
+        "EP01 is an innovative method designed to increase oil production in the most profitable way. I led this project from the skatch to the serial production.",
+      tags: ["ANSYS", "SolidWorks", "PDM", "FEMM", "MATLAB", "Simulink", "Manufacturing Process"],
+      demo: "https://www.youtube.com/watch?v=qE2feX8oYBs",
+      image: epImage,
+      badge: ["featured", "under NDA"],
     },
     {
-      title: 'Smart Building Control System',
+      title: "Valve for a linear electric submersible pump",
       description:
-        'Integrated HVAC, lighting, and security systems for a commercial building. Implemented energy-efficient algorithms reducing power consumption by 30%.',
-      tags: ['BMS', 'HVAC', 'IoT Sensors', 'Energy Management'],
-      github: undefined,
-      demo: '#',
-      image:
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080',
-      featured: true,
+        "Valve construction that allows to work in any angle of the pump installation. Works with minimal leackage and high efficiency.",
+      tags: ["ANSYS", "CFX", "SolidWorks", "MATLAB", "Simulink"],
+      demo: "https://patents.google.com/patent/USD963118S1",
+      image: patentImage,
+      badge: ["featured", "under NDA"],
     },
     {
-      title: 'Motor Control System',
+      title: "Slider of a submersible linear motor",
       description:
-        'Developed a variable frequency drive (VFD) control system for industrial motors with soft start, regenerative braking, and fault protection features.',
-      tags: ['VFD', 'Power Electronics', 'Motor Control', 'C/C++'],
-      github: undefined,
-      demo: '#',
-      image:
-        'https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080',
-      featured: false,
+        "The main moving part of a submersible linear motor. Having an innovative and optimized design, working as a part of a magnetic system, as well as a friction element.",
+      tags: ["ANSYS", "Maxwell", "SolidWorks", "FEMM"],
+      demo: "https://patents.google.com/patent/USD1009079S1",
+      image: patentImage,
+      badge: ["featured", "under NDA"],
+    },
+    {
+      title: "Cable connection device for submersible linear electric motor",
+      description: "",
+      tags: ["SolidWorks"],
+      demo: "https://patents.google.com/patent/UA141739U",
+      image: patentImage,
+      badge: ["featured", "under NDA"],
+    },
+    {
+      title: "Submitted pump filter module",
+      description: "",
+      tags: ["ANSYS", "CFX", "SolidWorks"],
+      demo: "https://patents.google.com/patent/UA148342U",
+      image: patentImage,
+      badge: ["featured", "under NDA"],
+    },
+    {
+      title: "Plunger pump module with a gravity gas separator",
+      description: "",
+      tags: ["ANSYS", "CFX", "SolidWorks"],
+      demo: "https://patents.google.com/patent/UA150259U",
+      image: patentImage,
+      badge: ["featured", "under NDA"],
+    },
+    {
+      title:
+        "Method of cooling of a current linear electric motor and devices of the device for its implementation",
+      description: "",
+      tags: ["ANSYS", "CFX", "SolidWorks"],
+      demo: "https://patents.google.com/patent/UA121280C2",
+      image: patentImage,
+      badge: ["featured", "under NDA"],
+    },
+    {
+      title: "Pump valve device",
+      description: "",
+      tags: ["ANSYS", "CFX", "SolidWorks", "MATLAB", "Simulink"],
+      demo: "https://patents.google.com/patent/UA132059U",
+      image: patentImage,
+      badge: ["featured", "under NDA"],
     },
   ],
 };

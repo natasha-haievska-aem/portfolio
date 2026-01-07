@@ -29,11 +29,12 @@ function AppContent() {
         </main>
         <footer className="py-8 border-t bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()}  
+            <p>
+              © {new Date().getFullYear()}
               <span> </span>
               <span className="font-bold relative">N</span>
-              <span className="font-bold relative -ml-1">H</span>
-              . Built with React & Ant Design.</p>
+              <span className="font-bold relative -ml-1">H</span>. Built with React & Ant Design.
+            </p>
           </div>
         </footer>
       </div>
