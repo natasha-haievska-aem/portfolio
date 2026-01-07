@@ -19,7 +19,6 @@ export interface ProfileData {
   stats: {
     experience: string;
     projects: string;
-    satisfaction: string;
   };
 }
 
@@ -29,14 +28,14 @@ const fsDevExperience = `${new Date().getFullYear() - 2021}+`;
 export const commonDescriptions = [
   "I have a Master’s degree in Electromechanics, and a significant part of my life has been dedicated to engineering: designing, putting new mechanisms for oil extraction into production, and scaling their serial manufacturing. Engineering shaped how I think: systematically, responsibly, and with respect for real-world constraints.",
   "During COVID, I began learning programming to build a profession that didn’t depend on being physically present in an office. After the war started in Ukraine in 2022, web development became a way for me to live and stay independent. Still, my heart belongs to engineering, especially at the intersection of electromechanical design and programming.",
-  "Music is a long-term passion of mine, practiced at a professional level. I play piano, guitar, and drums, write original music, and have worked as a sound producer for a Ukrainian singer. I also participated as a performing musician and later led a worship band in a local church in Ukraine. Music gives me creative balance, discipline, and a deeper sense of harmony beyond technical work.",
+  "Music is a long-term passion of mine, practiced at a professional level. I play piano, guitar, and drums, write original music, and have worked with an Ukrainian singer as a sound producer. I also participated as a performing musician and later led a worship band in a local church in Ukraine. Music gives me creative balance, discipline, and a deeper sense of harmony beyond technical work.",
   "I believe that if something doesn’t violate the laws of reality, it can be built.",
 ];
 
 export const profileData: Record<RoleKey, ProfileData> = {
   fullStackDev: {
     tagline: "Full-Stack Developer",
-    title: "Crafting Beautiful Digital Experiences",
+    title: "Hi, nice to meet you! Let me tell you about myself.",
     description: [
       commonDescriptions[0],
       commonDescriptions[1],
@@ -48,24 +47,22 @@ export const profileData: Record<RoleKey, ProfileData> = {
     stats: {
       experience: fsDevExperience,
       projects: "7+",
-      satisfaction: "100%",
     },
   },
   emEng: {
     tagline: "Electromechanical Engineer",
-    title: "Building Intelligent Systems",
+    title: "Hi, nice to meet you! Let me tell you about myself.",
     description: [
       commonDescriptions[0],
       "I started my career as a Junior Design Engineer, focusing on component-level design, calculations, and drafting for downhole oil extraction equipment. Over time, I built deep expertise in hydraulic, thermal, and strength analysis, gradually expanding my responsibility from individual parts to full tool assemblies operating under extreme downhole conditions.",
-      "As I progressed into a Lead Design Engineer role, I took ownership of the complete development lifecycle—from concept and feasibility to prototyping, testing, and series production. I led the design of solutions for complex well geometries, including curved and nearly horizontal wells, working closely with manufacturing and field teams to ensure reliability and performance.",
-      "One of the key outcomes of my work was the development of a unique downhole solution that advanced from concept to industrial deployment and resulted in multiple granted patents",
+      "As I progressed into a Lead Design Engineer role, I took ownership of the complete development lifecycle - from concept and feasibility to prototyping, testing, and series production. I led the design of solutions for complex well geometries, including curved and nearly horizontal wells, working closely with manufacturing and field teams to ensure reliability and performance.",
+      "One of the key outcomes of my work was the development of a unique downhole solution that advanced from concept to industrial deployment and resulted in multiple granted patents.",
       commonDescriptions[2],
       commonDescriptions[3],
     ],
     stats: {
       experience: emEngExperience,
       projects: "10+",
-      satisfaction: "100%",
     },
   },
 };
